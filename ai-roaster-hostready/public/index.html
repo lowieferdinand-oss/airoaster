@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Roaster 🔥 — Maak virale roasts</title>
+<link rel="stylesheet" href="/style.css">
+<!-- Google Analytics placeholder (replace MEASUREMENT_ID) -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'MEASUREMENT_ID');
+</script>
+<!-- TikTok Pixel placeholder -->
+<script>
+!function (w,d,t) {
+  w.TiktokAnalyticsObject=t;var tt=w[t]=w[t]||[];tt.methods=['page','track'];tt.load=function(){};
+}(window,document,'ttq');
+ttq.load = function(){ console.warn('Voeg je TikTok pixel loader toe.'); }
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI Roaster 🔥</h1>
+    <p class="tag">Krijg scherpe, virale roasts — gratis + premium</p>
+  </header>
+
+  <main class="card">
+    <textarea id="target" placeholder="Typ een naam, beschrijving of preset (bv. 'mijn collega Tim' of 'mijn oude fiets')"></textarea>
+
+    <div class="row">
+      <select id="preset">
+        <option value="">— Kies preset —</option>
+        <option value="late">'Je bent altijd te laat'</option>
+        <option value="lazy">'De luiheid special'</option>
+        <option value="tech">'Tech fail roast'</option>
+        <option value="relationship">'Cringe dating roast'</option>
+      </select>
+
+      <div class="tone">
+        <label><input type="radio" name="tone" value="standard" checked/> Standaard</label>
+        <label><input type="radio" name="tone" value="nice"/> Mild</label>
+        <label><input type="radio" name="tone" value="mean"/> Pittig</label>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="gen">Gratis roast</button>
+      <button id="gen-premium">Premium roast (€1.99)</button>
+      <button id="randomize">Random preset</button>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <div class="share-row">
+      <button id="share-tiktok">Kopieer voor TikTok</button>
+      <button id="share-twitter">Deel op Twitter</button>
+      <button id="screenshot">Maak screenshot</button>
+    </div>
+
+    <div id="note" class="note"></div>
+    <p class="small">Tip: Plaats grappige roasts op TikTok/Instagram — link terug naar je site voor verkeer.</p>
+  </main>
+
+  <footer>
+    <p>Betaal met Stripe — log in op Vercel en voeg STRIPE_SECRET_KEY toe voor betalingen.</p>
+  </footer>
+</div>
+
+<!-- html2canvas for screenshot -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="/main.js"></script>
+</body>
+</html>

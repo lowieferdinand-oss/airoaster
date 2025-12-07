@@ -1,0 +1,18 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Betaling gelukt</title><link rel="stylesheet" href="/style.css"></head><body>
+<div class="wrap"><main class="card"><h2>Betaling gelukt 🎉</h2>
+<p>Bedankt! We controleren je betaling. Als alles goed is, krijg je automatisch je premium roast.</p>
+<p>Als het niet automatisch gebeurt, <a href="/">ga terug</a> en klik op 'Premium roast'.</p>
+</main></div>
+<script>
+  // redirect to home with session_id in URL so client verifies
+  const params = new URLSearchParams(window.location.search);
+  const sid = params.get('session_id');
+  if (sid) {
+    window.location = '/?session_id=' + encodeURIComponent(sid);
+  } else {
+    // no session id: go home
+    setTimeout(()=>{ window.location = '/'; }, 2000);
+  }
+</script>
+</body></html>
